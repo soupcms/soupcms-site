@@ -1,0 +1,1 @@
+## Advance soupCMS Core documentation

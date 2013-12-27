@@ -1,0 +1,57 @@
+require 'tilt'
+require 'sprockets'
+require 'sprockets/helpers'
+require 'rack/cache'
+require 'faraday'
+require 'faraday_middleware'
+
+require 'soupcms/core'
+require 'soupcms/api'
+
+
+use Rack::Cache,
+    :metastore => 'heap:/',
+    :entitystore => 'heap:/',
+    :verbose => false
+
+# http client with caching based on cache headers
+SoupCMS::Core::Utils::HttpClient.connection = Faraday.new do |faraday|
+  faraday.use FaradayMiddleware::RackCompatible, Rack::Cache::Context,
+              :metastore => 'heap:/',
+              :entitystore => 'heap:/',
+              :verbose => false,
+              :ignore_headers => %w[Set-Cookie X-Content-Digest]
+
+  faraday.adapter Faraday.default_adapter
+end
+
+SITE_TEMPLATE_DIR = File.join(File.dirname(__FILE__), 'ui')
+
+map '/assets' do
+  sprockets = SoupCMSCore.config.sprockets
+  sprockets.append_path SoupCMS::Core::Template::Manager::DEFAULT_TEMPLATE_DIR
+  sprockets.append_path SITE_TEMPLATE_DIR
+  Sprockets::Helpers.configure do |config|
+    config.environment = sprockets
+    config.prefix = '/assets'
+    config.public_path = nil
+    config.digest = true
+  end
+  run sprockets
+end
+
+map '/api' do
+  SoupCMSApi.configure do |config|
+    config.http_caching_strategy.default_max_age = 10*60 # 10 minutes
+  end
+  run SoupCMSApiRackApp.new
+end
+
+map '/' do
+  SoupCMSCore.configure do |config|
+    config.template_manager.prepend_store SoupCMS::Core::Template::FileStore.new(SITE_TEMPLATE_DIR)
+  end
+  run SoupCMSRackApp.new
+end
+
+

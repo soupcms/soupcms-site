@@ -1,0 +1,8 @@
+{
+    "kind": "module",
+    "template_name" : "bootstrap/simple-page-header",
+    "type" : "slim",
+
+    "template" : "$file:bootstrap-simple-page-header.slim"
+
+}

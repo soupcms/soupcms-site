@@ -1,6 +1,6 @@
-require "soupcms/site/version"
+require 'soupcms/site/version'
 
-module Soupcms
+module SoupCMS
   module Site
     # Your code goes here...
   end
