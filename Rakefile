@@ -64,7 +64,6 @@ class SoupCMSModelBuilder
 
   def build
     doc['doc_id'] = doc_name unless doc['doc_id']
-    doc['slug'] = slug
 
     timestamp = file.mtime.to_i
     doc['publish_datetime'] = timestamp
@@ -84,9 +83,11 @@ class SoupCMSModelBuilder
       when 'pages'
       when 'posts'
         doc['title'] = title
+        doc['slug'] = slug
         doc['description'] = description
       when 'chapters'
         doc['title'] = title
+        doc['slug'] = slug
         build_chapter_links
     end
   end
