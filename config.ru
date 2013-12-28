@@ -26,15 +26,17 @@ SoupCMS::Core::Utils::HttpClient.connection = Faraday.new do |faraday|
 end
 
 SITE_TEMPLATE_DIR = File.join(File.dirname(__FILE__), 'ui')
+PUBLIC_DIR = File.join(File.dirname(__FILE__), 'public')
 
 map '/assets' do
   sprockets = SoupCMSCore.config.sprockets
   sprockets.append_path SoupCMS::Core::Template::Manager::DEFAULT_TEMPLATE_DIR
   sprockets.append_path SITE_TEMPLATE_DIR
+  sprockets.append_path PUBLIC_DIR
   Sprockets::Helpers.configure do |config|
     config.environment = sprockets
     config.prefix = '/assets'
-    config.public_path = nil
+    config.public_path = PUBLIC_DIR
     config.digest = true
   end
   run sprockets
@@ -43,6 +45,7 @@ end
 map '/api' do
   SoupCMSApi.configure do |config|
     config.http_caching_strategy.default_max_age = 10*60 # 10 minutes
+    config.data_resolver.register(/content$/,SoupCMS::Api::Resolver::RedcarpetMarkdownResolver)
   end
   run SoupCMSApiRackApp.new
 end

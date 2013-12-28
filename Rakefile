@@ -36,22 +36,27 @@ class SoupCMSModelBuilder
 
   def initialize(file, conn = nil); @file = file; @conn = conn; end
   attr_reader :file, :conn
-  def doc_name; File.basename(file).split('.').first end
+  def doc_name; File.basename(file).split('.').first.split(';').first end
+  def tags; (get_attribute('tags') || '').split(',') end
+  def get_attribute(attr_name) File.basename(file).split('.').first.split(';').collect{|t| t.split('=').last if t.include?(attr_name) }.compact[0] end
   def type; File.basename(file).split('.').last end
   def model; file.path.split('/')[2] end
   def app_name; file.path.split('/')[1] end
   def db; conn.db(app_name) end
   def coll; db[model] end
   def slug; doc['slug'] || doc_name end
+  def content_flavor; File.basename(file).split('.').size > 2 ? File.basename(file).split('.')[1] : nil end
 
   def doc; @doc ||= parse_file end
   def parse_file
     case type
       when 'md'
-        { 'content' => { 'type' => 'markdown', 'value' => file.read } }
+        doc_hash = { 'content' => { 'type' => 'markdown', 'value' => file.read } }
+        doc_hash['content']['flavor'] = content_flavor if content_flavor
       when 'json'
-        JSON.parse(file.read)
+        doc_hash = JSON.parse(file.read)
     end
+    doc_hash
   end
 
   def old_doc
@@ -75,7 +80,6 @@ class SoupCMSModelBuilder
     doc['latest'] = true
 
     build_model_specific_data
-
   end
 
   def build_model_specific_data
@@ -85,9 +89,11 @@ class SoupCMSModelBuilder
         doc['title'] = title
         doc['slug'] = slug
         doc['description'] = description
+        doc['tags'] = tags
       when 'chapters'
         doc['title'] = title
         doc['slug'] = slug
+        doc['tags'] = tags
         build_chapter_links
     end
   end
