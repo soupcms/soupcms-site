@@ -48,7 +48,7 @@ class SoupCMSModelBuilder
   def parse_file
     case type
       when 'md'
-        { 'content' => file.read }
+        { 'content' => { 'type' => 'markdown', 'value' => file.read } }
       when 'json'
         JSON.parse(file.read)
     end
@@ -92,14 +92,25 @@ class SoupCMSModelBuilder
     end
   end
 
-  def title; doc['title'] || Titleize.new.titleize(doc['content'] ? doc['content'].lines.first.chomp : doc_name) end
+  def title
+    return doc['title'] if doc['title']
+
+    if doc['content'] && doc['content']['value']
+      content_lines = doc['content']['value'].lines
+      doc_title = content_lines.first.chomp
+      doc['content']['value'] = content_lines[2] ? content_lines[2..-1].join("\n") : ''
+    else
+      doc_title = doc_name
+    end
+    doc_title.gsub('_',' ').gsub('#','').strip
+  end
 
   def description
     return doc['description'] if doc['description']
     post_description = ''
-    content_lines = doc['content'].lines
-    index = 1
-    while post_description.length < 200 do
+    content_lines = doc['content']['value'].lines
+    index = 0
+    while post_description.length < 300 do
       post_description.concat(content_lines[index].chomp.gsub(/\A[\d_\W]+|[\d_\W]+\Z/, ''))
       index += 1
     end

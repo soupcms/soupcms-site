@@ -1,33 +1,25 @@
 # CMS usage patterns, find out which one fits yours need?
 
-Now days every business wants CMS capability in their app, at minimum for home page to show promotions, alerts,
-news & messages to end users. On each and every project I have been on in last 5 odd years, CMS was part of
-application in one or the other way. At the start of the project I always had to think and decide which CMS
-system should I go for. And working with different domain, some patterns started emerging in my thoughts
-and helped me making decision.
-
+Now days every business wants CMS capability in their app, at minimum for home page to show promotions, alerts, news & messages to end users. On each and every project I have been on in last 5 odd years, CMS was part of application in one or the other way. At the start of the project I always had to think and decide which CMS system should I go for. And working with different domain, some patterns started emerging in my thoughts and helped me making decision.
 I have worked with multiple feature rich CMS products, which provides business critical features such as versioning, publishing work flow, content promotion... . However, one of the key pain area in all of this feature rich CMS products is that development of remaining custom components either as plugins or customization modules if very difficult. Developing these ~20% of the custom components takes lot of time & effort with specialized skills. Most of the time we need to hack to get custom component build in existing CMS.
 
-## I came up with following CMS usage pattern?
+## Based on usage pattern of the CMS, categorised into following CMS usage pattern?
 
-### Type 1: Full CMS - Publishing & media websites
-
-If you have capacity Build your own CMS.
-Or
-Based on the requirement and skills available within the team decide on the full featured CMS system such as Liferay, Drupal etc.
-
-### Type 2: Partial CMS - Online business websites
-
-Take any of-the-shelf lightweight CMS, which integrates seamlessly (unobtrusively) in your application.
-e.g. taking open source CMS as rails 3 mounted application (www.locomotivecms.com or http://refinerycms.com/ or http://www.browsercms.org) and build you application as normal rails 3 application. hint: opensource CMS can be forked if required.
-Or
-Build your own simple unobtrusive CMS. Checkout this article and build your own core component.
-
-### Type 3: CMS for the namesake - few pages in application
-
-Build your own wiki style CMS with lightweight admin interface to update markups. e.g. Markdown is very popular and available in all languages.
+### Type 1: Full CMS
+In this category of CMS usage, full website is build using CMS. All content is published and managed within CMS. There are number of editors whose job is to manage and maintain the content on website. Hence, CMS should have capability of managing and generating content. The content is edited, created frequently on website by multiple users as full time job.
+#### examples: News sites, Company or corporate websites
 
 
+### Type 2: Partial CMS
+Here the site required lot of content to be CMS managed like product details, promotions on site (e.g. deal of the day), special deals etc. However, there is log of application logic apart from CMS systm such as shopping cart, payment, checkout etc.
+#### examples: Retail websites
+
+
+### Type 3: CMS for the namesake
+#### examples: About, Contact, Legal ... pages in any website
+
+
+First, find out what is the usecase and decide on the cMS system you are looking for.
 
 And I started looking into following criteria while choosing CMS:
 * Support for digital asset management (image repository with resizing) are very important for CMS. Look for Amazon S3 support too.
