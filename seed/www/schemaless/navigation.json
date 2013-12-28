@@ -1,0 +1,57 @@
+{
+    "name": "navigation",
+
+    "logo": {
+        "font_icon" : "fa fa-magic",
+        "text": "soupCMS",
+        "link" : {
+            "url" : "http://www.soupcms.com/www/home"
+        }
+    },
+
+    "menu": {
+        "left": [
+            {
+                "label": "Blog",
+                "link" : {
+                    "url" : "home"
+                }
+            },
+            {
+                "label": "Resources",
+                "submenu" : [
+                    {
+                        "label": "Screencasts",
+                        "link" : {
+                            "url":"http://www.soupcms.com/www/screencasts"
+                        },
+                        "font_icon" : "fa fa-desktop"
+                    },
+                    {
+                        "label": "Documentation",
+                        "link" : {
+                            "url": "http://www.soupcms.com/docs/home"
+                        },
+                        "font_icon" : "fa fa-file-text"
+                    }
+                ]
+            }
+        ],
+        "right": [
+            {
+                "label": "Contact Us",
+                "link" : {
+                    "url":"http://www.soupcms.com/www/contact-us"
+                },
+                "font_icon" : "fa fa-envelope-o"
+            },
+            {
+                "label": "About",
+                "link" : {
+                    "url":"http://www.soupcms.com/www/about"
+                }
+            }
+        ]
+    }
+
+}
