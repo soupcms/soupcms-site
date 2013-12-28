@@ -7,8 +7,8 @@ gem 'sprockets', github: 'sstephenson/sprockets'
 gem 'soupcms-core', path: '../soupcms-core'
 gem 'soupcms-api', path: '../soupcms-api'
 gem 'redcarpet'
-gem 'rouge'
-#gem 'kramdown'
+gem 'kramdown'
+gem 'coderay'
 
 group :development do
   gem 'puma'

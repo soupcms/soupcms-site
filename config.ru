@@ -46,6 +46,7 @@ map '/api' do
   SoupCMSApi.configure do |config|
     config.http_caching_strategy.default_max_age = 10*60 # 10 minutes
     config.data_resolver.register(/content$/,SoupCMS::Api::Resolver::RedcarpetMarkdownResolver)
+    config.data_resolver.register(/content$/,SoupCMS::Api::Resolver::KramdownMarkdownResolver)
   end
   run SoupCMSApiRackApp.new
 end
