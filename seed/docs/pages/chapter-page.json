@@ -27,17 +27,14 @@
                     "recipes": [
                         {
                             "type": "soupcms-api",
-                            "model": "#{context.model_name}",
-                            "match": {
-                                "slug": "#{context.slug}"
-                            },
-                            "return": "sidebar-document"
+                            "model": "/#{context.model_name}slug/#{context.slug}",
+                            "return": "toc-document"
                         },
                         {
                             "type": "post-processor",
                             "processor" : "SoupCMS::Core::Processor::NokogiriTOC",
                             "config" : {
-                                "toc_for" : "#{data['sidebar-document'][0]['content']['value']}",
+                                "toc_for" : "#{data['toc-document']['content']['value']}",
                                 "levels" : ["h2","h3","h4", "h5", "h6"]
                             },
                             "return": "table-of-content"
@@ -68,7 +65,7 @@
                             "model": "chapters",
                             "fields": ["title", "slug"],
                             "limit" : 100,
-                            "return": "posts"
+                            "return": "articles"
                         }
                     ],
                     "template": {
