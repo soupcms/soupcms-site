@@ -1,0 +1,10 @@
+- chapters = data['chapters']
+- if chapters && !chapters.empty?
+  .chapters-table-of-content
+    - if module_hash['template']['config'] && module_hash['template']['config']['title']
+      .lead = module_hash['template']['config']['title']
+    .well.well-sm
+      ol
+        - chapters.each do |chapter|
+          li
+            a href="#{chapter['url']}" = chapter['title']

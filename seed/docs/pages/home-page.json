@@ -1,0 +1,55 @@
+{
+
+    "slug": "home",
+
+    "title": "Documentation",
+    "seo": {
+        "keywords": "sunitparekh, sunit, parekh, blog, technical, software",
+        "description": "Sunit Parekh documentation"
+
+    },
+
+    "areas": [
+        {
+            "name": "body",
+            "modules": [
+                {
+                    "recipes": [
+                        {
+                            "type": "inline",
+                            "data": {
+                                "title": "soupCMS Documentation"
+                            },
+                            "return": "page-header"
+                        }
+                    ],
+                    "template": {
+                        "type": "slim",
+                        "name": "bootstrap/simple-page-header"
+                    }
+                },
+                {
+                    "recipes": [
+                        {
+                            "type": "soupcms-api",
+                            "model": "chapters",
+                            "fields": ["title", "slug"],
+                            "sort": ["chapter_number"],
+                            "limit" : 100,
+                            "return": "chapters"
+                        }
+                    ],
+                    "template": {
+                        "type": "slim",
+                        "name": "bootstrap/book/table-of-content",
+                        "config" :{
+                            "title" : "Table of Content"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+
+
+}

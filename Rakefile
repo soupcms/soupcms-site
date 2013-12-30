@@ -45,7 +45,7 @@ class SoupCMSModelBuilder
     doc_name = File.basename(file).split('.').first.split(';').first
     model == 'chapters' ? doc_name.match('^[\d]-').post_match : doc_name
   end
-  def chapter; File.basename(file).match('^[\d]')[0].to_i end
+  def chapter_number; File.basename(file).match('^[\d]')[0].to_i end
   def tags; (get_attribute('tags') || '').split(',') end
   def get_attribute(attr_name) File.basename(file).split('.').first.split(';').collect{|t| t.split('=').last if t.include?(attr_name) }.compact[0] end
   def type; File.basename(file).split('.').last end
@@ -63,7 +63,8 @@ class SoupCMSModelBuilder
         doc_hash = { 'content' => { 'type' => 'markdown', 'value' => file.read } }
         doc_hash['content']['flavor'] = content_flavor if content_flavor
       when 'json'
-        doc_hash = JSON.parse(file.read)
+        document_hash = JSON.parse(file.read)
+        doc_hash = ParseFileContent.new(File.dirname(file)).parse(document_hash)
     end
     doc_hash
   end
@@ -103,7 +104,7 @@ class SoupCMSModelBuilder
         doc['title'] = title
         doc['slug'] = slug
         doc['tags'] = tags
-        doc['chapter'] = chapter
+        doc['chapter_number'] = chapter_number
         build_chapter_links
     end
   end

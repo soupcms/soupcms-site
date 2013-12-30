@@ -15,39 +15,14 @@
                 {
                     "recipes": [
                         {
-                            "type": "soupcms-api",
-                            "model": "schemaless",
-                            "match": {
-                                "name": "navigation"
-                            },
+                            "type": "http",
+                            "url" : "#{context.application.soupcms_api_host_url}/api/www/schemaless/name/navigation",
                             "return": "navigation"
                         }
                     ],
                     "template": {
                         "type": "slim",
                         "name": "bootstrap/navigation"
-                    }
-                },
-                {
-                    "recipes": [
-                        {
-                            "type": "inline",
-                            "data": {
-                                "title": "soupCMS blog",
-                                "subtitle": "unobtrusive CMS framework",
-                                "sub_headline": "unobtrusive CMS framework that integrates within your application",
-                                "image": {
-                                    "source": "cloudinary",
-                                    "base_url": "http://res.cloudinary.com/sunitparekh/image/upload",
-                                    "desktop": "purple-textures-low_xiamgc.jpg"
-                                }
-                            },
-                            "return": "page-header"
-                        }
-                    ],
-                    "template": {
-                        "type": "slim",
-                        "name": "bootstrap/page-header"
                     }
                 }
             ]
@@ -58,11 +33,8 @@
                 {
                     "recipes": [
                         {
-                            "type": "soupcms-api",
-                            "model": "schemaless",
-                            "match": {
-                                "name": "social-toolbar"
-                            },
+                            "type": "http",
+                            "url" : "#{context.application.soupcms_api_host_url}/api/www/schemaless/name/social-toolbar",
                             "return": "social-toolbar"
                         }
                     ],
@@ -79,11 +51,8 @@
                 {
                     "recipes": [
                         {
-                            "type": "soupcms-api",
-                            "model": "schemaless",
-                            "match": {
-                                "name": "footer"
-                            },
+                            "type": "http",
+                            "url" : "#{context.application.soupcms_api_host_url}/api/www/schemaless/name/footer",
                             "return": "footer"
                         }
                     ],

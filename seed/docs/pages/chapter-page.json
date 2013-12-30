@@ -10,11 +10,8 @@
                 {
                     "recipes": [
                         {
-                            "type": "soupcms-api",
-                            "model": "schemaless",
-                            "match": {
-                                "name": "social-toolbar"
-                            },
+                            "type": "http",
+                            "url" : "#{context.application.soupcms_api_host_url}/api/www/schemaless/name/social-toolbar",
                             "return": "social-toolbar"
                         }
                     ],
@@ -27,7 +24,7 @@
                     "recipes": [
                         {
                             "type": "soupcms-api",
-                            "model": "/#{context.model_name}slug/#{context.slug}",
+                            "model": "/#{context.model_name}/slug/#{context.slug}",
                             "return": "toc-document"
                         },
                         {
@@ -64,13 +61,17 @@
                             "type": "soupcms-api",
                             "model": "chapters",
                             "fields": ["title", "slug"],
+                            "sort": ["chapter_number"],
                             "limit" : 100,
-                            "return": "articles"
+                            "return": "chapters"
                         }
                     ],
                     "template": {
                         "type": "slim",
-                        "name": "bootstrap/list-view"
+                        "name": "bootstrap/book/table-of-content",
+                        "config" :{
+                            "title" : "Chapters"
+                        }
                     }
                 }
 
@@ -83,16 +84,13 @@
                     "recipes": [
                         {
                             "type": "soupcms-api",
-                            "model": "#{context.model_name}",
-                            "match": {
-                                "slug": "#{context.slug}"
-                            },
-                            "return": "document"
+                            "model": "#{context.model_name}/slug/#{context.slug}",
+                            "return": "chapter"
                         }
                     ],
                     "template": {
                         "type": "slim",
-                        "name": "bootstrap/article"
+                        "name": "bootstrap/book/chapter"
                     }
                 }
             ]

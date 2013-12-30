@@ -39,7 +39,10 @@
                     ],
                     "template": {
                         "type": "slim",
-                        "name": "bootstrap/table-of-content"
+                        "name": "bootstrap/table-of-content",
+                        "config" :{
+                            "title" : "Contents"
+                        }
                     }
                 },
                 {
@@ -67,7 +70,10 @@
                     ],
                     "template": {
                         "type": "slim",
-                        "name": "bootstrap/list-view"
+                        "name": "bootstrap/list-view",
+                        "config" :{
+                            "title" : "Recent Posts"
+                        }
                     }
                 }
 
