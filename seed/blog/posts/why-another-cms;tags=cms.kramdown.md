@@ -6,4 +6,11 @@ Why CMS system can't be unobtrusive. Means I want all features of CMS and allows
 
 Also it is difficult to consume data from different or in-house sources. Such as, already have product catalog api available and would like to use it.
 
+So decided to build CMS which is based on following *design principles*.
+
+## Design Principles
+
+- **Unobtrusive** means CMS will integrate within your application as library and provide all CMS features.
+- **Minimum and non conflicting dependencies**, CMS system should have minimum dependency without any restriction on versions to avoid any conflicts, this allows independent upgradation of the application.
+
 

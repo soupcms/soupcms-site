@@ -9,6 +9,7 @@ gem 'soupcms-api', path: '../soupcms-api'
 gem 'redcarpet'
 gem 'kramdown'
 gem 'coderay'
+gem 'nokogiri'
 
 group :development do
   gem 'puma'

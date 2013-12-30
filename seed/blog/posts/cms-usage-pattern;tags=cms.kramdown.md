@@ -6,25 +6,27 @@ I have worked with multiple feature rich CMS products, which provides business c
 
 ---
 
-### Based on usage pattern of the CMS
+## Based on usage pattern of the CMS
 
 ![CMS usage pattern](/assets/images/blog/CMS_usage_pattern.png "CMS usage pattern")
 
-#### *Type 1: Full CMS*
+### *Type 1: Full CMS*
 
 In this category of CMS usage, full website is build using CMS. All content is published and managed within CMS. There are number of editors whose job is to manage and maintain the content on website. Hence, CMS should have capability of managing and generating content. The content is edited, created frequently on website by multiple users as full time job. Examples of sites using or required Full CMS are *News sites*, *Company or corporate websites*
 
 
-#### *Type 2: Partial CMS*
+### *Type 2: Partial CMS*
 Here the site required lot of content to be CMS managed like product details, promotions on site (e.g. deal of the day), special deals, navigation like header and footer components etc. However, there is lot of application logic apart from CMS systm such as shopping cart, payment, checkout etc. That's why I call this as partial CMS. There are handful of people who manges a content as part time  but less frequent than the Full CMS category. Examples are typical retail sites like *amazon.com*, *flipkart.com* etc.
 
 
-#### *Type 3: CMS for the namesake*
+### *Type 3: CMS for the namesake*
 In this category site requires only few pages to be content manges such as About, Contact-Us, Legal etc. That's why it is CMS for the namesake. But it is important since this is required in each and every site. Also there is need of managing navigation, footer partials on the site. This is almost required in each and every site for pages like *About*, *Contact*, *Legal*... pages in any website
 
 ---
 
-#### And look into following criteria while choosing CMS,
+<div class="lead">
+Also look into following criteria while choosing CMS,
+</div>
 
 * Support for digital asset management (image repository with resizing) are very important for CMS. Look for Amazon S3 support too.
 * Content promotion from non-production env to production env is one of the most used feature. e.g. Create all the required content in stage and promote it to production before launch. Gives more flexibility to push release early to stage and get the content ready and later deploy and publish content in one go to production.
