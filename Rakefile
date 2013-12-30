@@ -12,7 +12,12 @@ task :seed do
       #puts "Ignoring ref file... #{afile}"
     else
       #puts "Importing file... #{afile}"
-      SoupCMSModelBuilder.new(File.new(afile),conn).create()
+      begin
+        SoupCMSModelBuilder.new(File.new(afile),conn).create()
+      rescue => e
+        puts "Error importing file... #{afile}"
+        puts e
+      end
     end
   end
   conn.close

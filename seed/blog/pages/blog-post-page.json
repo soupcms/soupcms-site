@@ -10,8 +10,8 @@
                 {
                     "recipes": [
                         {
-                            "type": "soupcms-api",
-                            "url" : "/schemaless/name/social-toolbar",
+                            "type": "http",
+                            "url" : "#{context.application.soupcms_api_host_url}/api/www/schemaless/name/social-toolbar",
                             "return": "social-toolbar"
                         }
                     ],
