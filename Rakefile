@@ -36,7 +36,11 @@ class SoupCMSModelBuilder
 
   def initialize(file, conn = nil); @file = file; @conn = conn; end
   attr_reader :file, :conn
-  def doc_name; File.basename(file).split('.').first.split(';').first end
+  def doc_name
+    doc_name = File.basename(file).split('.').first.split(';').first
+    model == 'chapters' ? doc_name.match('^[\d]-').post_match : doc_name
+  end
+  def chapter; File.basename(file).match('^[\d]')[0].to_i end
   def tags; (get_attribute('tags') || '').split(',') end
   def get_attribute(attr_name) File.basename(file).split('.').first.split(';').collect{|t| t.split('=').last if t.include?(attr_name) }.compact[0] end
   def type; File.basename(file).split('.').last end
@@ -94,6 +98,7 @@ class SoupCMSModelBuilder
         doc['title'] = title
         doc['slug'] = slug
         doc['tags'] = tags
+        doc['chapter'] = chapter
         build_chapter_links
     end
   end

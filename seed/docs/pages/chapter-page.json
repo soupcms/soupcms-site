@@ -1,6 +1,6 @@
 {
     "meta": {
-        "model": "posts"
+        "model": "chapters"
     },
 
     "areas": [
@@ -11,7 +11,10 @@
                     "recipes": [
                         {
                             "type": "soupcms-api",
-                            "url" : "/schemaless/name/social-toolbar",
+                            "model": "schemaless",
+                            "match": {
+                                "name": "social-toolbar"
+                            },
                             "return": "social-toolbar"
                         }
                     ],
@@ -62,10 +65,10 @@
                     "recipes": [
                         {
                             "type": "soupcms-api",
-                            "model": "posts",
+                            "model": "chapters",
                             "fields": ["title", "slug"],
-                            "limit" : 5,
-                            "return": "articles"
+                            "limit" : 100,
+                            "return": "posts"
                         }
                     ],
                     "template": {
@@ -83,8 +86,11 @@
                     "recipes": [
                         {
                             "type": "soupcms-api",
-                            "model": "/#{context.model_name}/slug/#{context.slug}",
-                            "return": "article"
+                            "model": "#{context.model_name}",
+                            "match": {
+                                "slug": "#{context.slug}"
+                            },
+                            "return": "document"
                         }
                     ],
                     "template": {

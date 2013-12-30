@@ -1,1 +1,1 @@
-## soupCMS API documentation
+# soupCMS API documentation

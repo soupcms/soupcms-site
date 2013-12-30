@@ -1,1 +1,1 @@
-## soupCMS Core documentation
+# soupCMS Core documentation
