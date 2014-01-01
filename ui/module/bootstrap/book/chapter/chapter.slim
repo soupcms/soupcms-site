@@ -1,11 +1,11 @@
 - chapter = data['chapter']
 .chapter
   .page-header
-    h1.chapter-title = chapter['title']
+    h1.chapter-title = "#{chapter['chapter_number']}. #{chapter['title']}"
 
   p = chapter['content']['value']
 
   hr
 
-  p = chapter.publish_datetime.strftime('%b %d, %Y  %I:%M %p')
+  p = "Last Modified: #{chapter.publish_datetime.strftime('%b %d, %Y')}"
 

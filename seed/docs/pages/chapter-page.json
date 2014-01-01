@@ -32,14 +32,17 @@
                             "processor" : "SoupCMS::Core::Processor::NokogiriTOC",
                             "config" : {
                                 "toc_for" : "#{data['toc-document']['content']['value']}",
-                                "levels" : ["h2","h3","h4", "h5", "h6"]
+                                "levels" : ["h2","h3","h4"]
                             },
                             "return": "table-of-content"
                         }
                     ],
                     "template": {
                         "type": "slim",
-                        "name": "bootstrap/table-of-content"
+                        "name": "bootstrap/table-of-content",
+                        "config" :{
+                            "title" : "Contents"
+                        }
                     }
                 },
                 {
