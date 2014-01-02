@@ -56,6 +56,12 @@ class SoupCMSModelBuilder
   def slug; doc['slug'] || doc_name end
   def content_flavor; File.basename(file).split('.').size > 2 ? File.basename(file).split('.')[1] : nil end
 
+  def hero_image
+    image_path = File.join(File.dirname(__FILE__), 'public', app_name, model, "images/#{doc_name}.*")
+    hero_image = Dir.glob(image_path).to_a
+    return File.join('/assets',app_name,model,'images',File.basename(hero_image[0])) unless hero_image.empty?
+  end
+
   def doc; @doc ||= parse_file end
   def parse_file
     case type
@@ -100,10 +106,13 @@ class SoupCMSModelBuilder
         doc['slug'] = slug
         doc['description'] = description
         doc['tags'] = tags
+        doc['hero_image'] = { 'url' => hero_image} if hero_image
       when 'chapters'
         doc['title'] = title
         doc['slug'] = slug
+        doc['description'] = description
         doc['tags'] = tags
+        doc['hero_image'] = { 'url' => hero_image} if hero_image
         doc['chapter_number'] = chapter_number
         build_chapter_links
     end

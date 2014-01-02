@@ -8,7 +8,7 @@ I have worked with multiple feature rich CMS products, which provides business c
 
 ## Based on usage pattern of the CMS
 
-![CMS usage pattern](/assets/images/blog/CMS_usage_pattern.png "CMS usage pattern")
+![CMS usage pattern](/assets/blog/posts/images/cms-usage-pattern.png "CMS usage pattern")
 
 ### *Type 1: Full CMS*
 
