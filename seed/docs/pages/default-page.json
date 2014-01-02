@@ -10,6 +10,17 @@
 
     "areas": [
         {
+            "name": "meta",
+            "modules" :[
+                {
+                    "template": {
+                        "type": "slim",
+                        "name": "meta/page-title"
+                    }
+                }
+            ]
+        },
+        {
             "name": "header",
             "modules": [
                 {
