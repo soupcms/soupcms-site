@@ -1,0 +1,45 @@
+{
+    "name": "navigation",
+
+    "logo": {
+        "font_icon" : "fa fa-magic",
+        "text": "soupCMS",
+        "link" : {
+            "url" : "/www/home"
+        }
+    },
+
+    "menu": {
+        "left": [
+            {
+                "label": "Blog",
+                "link" : {
+                    "url" : "/blog/home"
+                }
+            },
+            {
+                "label": "Documentation",
+                "link" : {
+                    "url": "/docs/home"
+                },
+                "font_icon" : "fa fa-file-text"
+            }
+        ],
+        "right": [
+            {
+                "label": "Contact Us",
+                "link" : {
+                    "url":"http://www.soupcms.com/www/contact-us"
+                },
+                "font_icon" : "fa fa-envelope-o"
+            },
+            {
+                "label": "About",
+                "link" : {
+                    "url":"http://www.soupcms.com/www/about"
+                }
+            }
+        ]
+    }
+
+}

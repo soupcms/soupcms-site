@@ -27,7 +27,7 @@
                     "recipes": [
                         {
                             "type": "http",
-                            "url" : "#{context.application.soupcms_api_host_url}/api/www/schemaless/name/navigation",
+                            "url" : "#{context.application.soupcms_api_url}/schemaless/name/navigation",
                             "return": "navigation"
                         }
                     ],
@@ -67,7 +67,7 @@
                     "recipes": [
                         {
                             "type": "http",
-                            "url" : "#{context.application.soupcms_api_host_url}/api/www/schemaless/name/social-toolbar",
+                            "url" : "#{context.application.soupcms_api_url}/schemaless/name/social-toolbar",
                             "return": "social-toolbar"
                         }
                     ],
@@ -98,7 +98,7 @@
                     "recipes": [
                         {
                             "type": "http",
-                            "url" : "#{context.application.soupcms_api_host_url}/api/www/schemaless/name/footer",
+                            "url" : "#{context.application.soupcms_api_url}/schemaless/name/footer",
                             "return": "footer"
                         }
                     ],

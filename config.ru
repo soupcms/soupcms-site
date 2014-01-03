@@ -53,7 +53,6 @@ end
 
 map '/' do
   SoupCMSCore.configure do |config|
-    config.soupcms_api_host_url = 'http://localhost:9292/'
     config.template_manager.prepend_store(SoupCMS::Core::Template::FileStore.new(SITE_TEMPLATE_DIR))
   end
   run SoupCMSRackApp.new

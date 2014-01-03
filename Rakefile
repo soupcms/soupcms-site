@@ -16,7 +16,7 @@ task :seed do
         SoupCMSModelBuilder.new(File.new(afile),conn).create()
       rescue => e
         puts "Error importing file... #{afile}"
-        puts e
+        puts e.backtrace
       end
     end
   end
@@ -136,7 +136,7 @@ class SoupCMSModelBuilder
     post_description = ''
     content_lines = doc['content']['value'].lines
     index = 0
-    while post_description.length < 300 do
+    while post_description.length < 300 && content_lines[index] do
       post_description.concat(content_lines[index].chomp.gsub(/\A[\d_\W]+|[\d_\W]+\Z/, ''))
       index += 1
     end
