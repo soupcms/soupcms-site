@@ -4,16 +4,9 @@ gemspec
 
 gem 'sprockets', github: 'sstephenson/sprockets'
 
-
-if RUBY_PLATFORM=~ /x86_64-darwin13/
-  gem 'soupcms-common', path: '../soupcms-common'
-  gem 'soupcms-core', path: '../soupcms-core'
-  gem 'soupcms-api', path: '../soupcms-api'
-else
-  gem 'soupcms-common', github: 'soupcms/soupcms-common'
-  gem 'soupcms-core', github: 'soupcms/soupcms-core'
-  gem 'soupcms-api', github: 'soupcms/soupcms-api'
-end
+gem 'soupcms-common', github: 'soupcms/soupcms-common'
+gem 'soupcms-core', github: 'soupcms/soupcms-core'
+gem 'soupcms-api', github: 'soupcms/soupcms-api'
 
 
 gem 'redcarpet'
