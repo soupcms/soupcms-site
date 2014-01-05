@@ -10,6 +10,9 @@ require 'soupcms/common'
 require 'soupcms/core'
 require 'soupcms/api'
 
+puts ENV['MONGODB_URI_www']
+puts ENV['MONGODB_URI_blog']
+puts ENV['MONGODB_URI_docs']
 
 use Rack::Cache,
     :metastore => 'heap:/',
