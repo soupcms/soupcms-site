@@ -6,41 +6,45 @@ require 'mongo'
 require 'json'
 
 task :seed do
-  conn = Mongo::MongoClient.new
   Dir.glob('seed/**/*.{json,md}').each do |afile|
     if afile.include?('ref_files')
       #puts "Ignoring ref file... #{afile}"
     else
       #puts "Importing file... #{afile}"
       begin
-        SoupCMSModelBuilder.new(File.new(afile),conn).create()
+        SoupCMSModelBuilder.new(File.new(afile)).create()
       rescue => e
         puts "Error importing file... #{afile}"
         puts e.backtrace
       end
     end
   end
-  conn.close
 end
 
 task :clean do
-  conn = Mongo::MongoClient.new
   %w(www blog docs).each do |app_name|
-    db = conn.db(app_name)
+    mongo_uri = ENV["MONGODB_URI_#{app_name}"] || "mongodb://localhost:27017/#{app_name}"
+    conn = Mongo::MongoClient.from_uri(mongo_uri)
+    db = conn.db
     puts "Cleaning up the database...#{app_name}"
     db.collection_names.each { |coll_name|
       next if coll_name.match(/^system/)
       db[coll_name].remove
     }
+    conn.close
   end
-  conn.close
 end
 
 
 class SoupCMSModelBuilder
 
-  def initialize(file, conn = nil); @file = file; @conn = conn; end
-  attr_reader :file, :conn
+  def initialize(file); @file = file; end
+  attr_reader :file
+  def conn
+    return @conn if @conn
+    mongo_uri = ENV["MONGODB_URI_#{app_name}"] || "mongodb://localhost:27017/#{app_name}"
+    @conn = Mongo::MongoClient.from_uri(mongo_uri)
+  end
   def doc_name
     doc_name = File.basename(file).split('.').first.split(';').first
     model == 'chapters' ? doc_name.match('^[\d]-').post_match : doc_name
@@ -51,7 +55,7 @@ class SoupCMSModelBuilder
   def type; File.basename(file).split('.').last end
   def model; file.path.split('/')[2] end
   def app_name; file.path.split('/')[1] end
-  def db; conn.db(app_name) end
+  def db; conn.db end
   def coll; db[model] end
   def slug; doc['slug'] || doc_name end
   def content_flavor; File.basename(file).split('.').size > 2 ? File.basename(file).split('.')[1] : nil end
@@ -165,6 +169,7 @@ class SoupCMSModelBuilder
       coll.insert(doc)
       update_old_doc
     end
+    conn.close
   end
 end
 

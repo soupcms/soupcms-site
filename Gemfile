@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gemspec
 
@@ -14,14 +15,13 @@ gem 'kramdown'
 gem 'coderay'
 gem 'nokogiri'
 
-group :development do
-  gem 'puma'
-  gem 'rack-cache'
-  gem 'faraday'
-  gem 'faraday_middleware'
-  gem 'mongo'
-  gem 'bson_ext'
-end
+gem 'foreman'
+gem 'puma'
+gem 'rack-cache'
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'mongo'
+gem 'bson_ext'
 
 group :test do
   gem 'rspec', '~> 3.0.0.beta1'
