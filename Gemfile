@@ -22,6 +22,7 @@ gem 'faraday'
 gem 'faraday_middleware'
 gem 'mongo'
 gem 'bson_ext'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'travis'

@@ -1,4 +1,8 @@
 require 'bundler/setup'
+require 'new_relic/rack/agent_hooks'
+require 'new_relic/rack/browser_monitoring'
+require 'new_relic/rack/error_collector'
+
 require 'tilt'
 require 'sprockets'
 require 'sprockets/helpers'
@@ -9,6 +13,10 @@ require 'faraday_middleware'
 require 'soupcms/common'
 require 'soupcms/core'
 require 'soupcms/api'
+
+use NewRelic::Rack::AgentHooks if ENV['RACK_ENV'] == 'production'
+use NewRelic::Rack::BrowserMonitoring if ENV['RACK_ENV'] == 'production'
+use NewRelic::Rack::ErrorCollector if ENV['RACK_ENV'] == 'production'
 
 puts "MONGODB_URI_www = #{ENV['MONGODB_URI_www']}"
 puts "MONGODB_URI_blog = #{ENV['MONGODB_URI_blog']}"
