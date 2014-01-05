@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'tilt'
 require 'sprockets'
 require 'sprockets/helpers'
