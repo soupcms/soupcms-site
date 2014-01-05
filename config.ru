@@ -5,6 +5,7 @@ require 'rack/cache'
 require 'faraday'
 require 'faraday_middleware'
 
+require 'soupcms/common'
 require 'soupcms/core'
 require 'soupcms/api'
 
