@@ -35,23 +35,27 @@
                         "type": "slim",
                         "name": "bootstrap/navigation"
                     }
-                }
-            ]
-        },
-        {
-            "name": "sidebar",
-            "modules": [
+                },
                 {
                     "recipes": [
                         {
-                            "type": "http",
-                            "url" : "#{context.application.soupcms_api_url}/schemaless/name/social-toolbar",
-                            "return": "social-toolbar"
+                            "type": "inline",
+                            "data": {
+                                "title": "soupCMS blog",
+                                "subtitle": "unobtrusive CMS framework",
+                                "sub_headline": "unobtrusive CMS framework that integrates within your application",
+                                "image": {
+                                    "source": "cloudinary",
+                                    "base_url": "http://res.cloudinary.com/sunitparekh/image/upload",
+                                    "desktop": "purple-textures-low_xiamgc.jpg"
+                                }
+                            },
+                            "return": "page-header"
                         }
                     ],
                     "template": {
                         "type": "slim",
-                        "name": "bootstrap/social-toolbar"
+                        "name": "bootstrap/page-header"
                     }
                 }
             ]

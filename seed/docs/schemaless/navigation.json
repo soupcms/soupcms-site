@@ -5,7 +5,7 @@
         "font_icon" : "fa fa-magic",
         "text": "soupCMS",
         "link" : {
-            "url" : "/www/home"
+            "url" : "http://www.soupcms.com/home"
         }
     },
 
@@ -14,13 +14,13 @@
             {
                 "label": "Blog",
                 "link" : {
-                    "url" : "/blog/home"
+                    "url" : "http://blog.soupcms.com/home"
                 }
             },
             {
                 "label": "Documentation",
                 "link" : {
-                    "url": "/docs/home"
+                    "url": "http://docs.soupcms.com/home"
                 },
                 "font_icon" : "fa fa-file-text"
             }
@@ -29,14 +29,14 @@
             {
                 "label": "Contact Us",
                 "link" : {
-                    "url":"http://www.soupcms.com/www/contact-us"
+                    "url":"http://www.soupcms.com/contact-us"
                 },
                 "font_icon" : "fa fa-envelope-o"
             },
             {
                 "label": "About",
                 "link" : {
-                    "url":"http://www.soupcms.com/www/about"
+                    "url":"http://www.soupcms.com/about"
                 }
             }
         ]
