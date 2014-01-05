@@ -46,7 +46,12 @@ map '/' do
     config.template_manager.prepend_store(SoupCMS::Core::Template::FileStore.new(SITE_TEMPLATE_DIR))
     config.application_strategy = SoupCMS::Common::Strategy::Application::SubDomainBased
   end
-  run SoupCMSRackApp.new
+  app = SoupCMSRackApp.new
+  app.set_redirect('http://soupcms.com/','http://www.soupcms.com/home')
+  app.set_redirect('http://www.soupcms.com/','http://www.soupcms.com/home')
+  app.set_redirect('http://blog.soupcms.com/','http://blog.soupcms.com/home')
+  app.set_redirect('http://docs.soupcms.com/','http://docs.soupcms.com/home')
+  run app
 end
 
 
