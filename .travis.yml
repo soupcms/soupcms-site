@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+- 2.0.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: BpzZ6T8Api+d1m/BGZ62U5o2FKbU1582ScypgITzoIQVryUIxNndjQE0Nms/E+nqFwS7fRQcnpkrqq2nCHuN/3xAmX5g5yBKJR33a/K9XEe1ev8efDycNqEjbHB2eoduOQw+5c2foETXpxJlp9TLtJsHsqXMtKpSUCp+22Goodw=
+  app: soupcms

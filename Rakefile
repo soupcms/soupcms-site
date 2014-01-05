@@ -5,6 +5,13 @@ require 'bundler/gem_tasks'
 require 'mongo'
 require 'json'
 
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec
+
+
 task :seed do
   Dir.glob('seed/**/*.{json,md}').each do |afile|
     if afile.include?('ref_files')

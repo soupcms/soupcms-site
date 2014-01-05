@@ -23,6 +23,10 @@ gem 'faraday_middleware'
 gem 'mongo'
 gem 'bson_ext'
 
+group :development do
+  gem 'travis'
+end
+
 group :test do
   gem 'rspec', '~> 3.0.0.beta1'
   gem 'rake'
