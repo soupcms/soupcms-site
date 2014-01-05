@@ -16,3 +16,4 @@ test/version_tmp
 tmp
 .idea
 prod-admin.env
+log
