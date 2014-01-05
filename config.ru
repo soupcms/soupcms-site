@@ -52,6 +52,7 @@ map '/api' do
     config.http_caching_strategy.default_max_age = 10*60 # 10 minutes
     config.data_resolver.register(/content$/,SoupCMS::Api::Resolver::RedcarpetMarkdownResolver)
     config.data_resolver.register(/content$/,SoupCMS::Api::Resolver::KramdownMarkdownResolver)
+    config.application_strategy = SoupCMS::Common::Strategy::Application::SubDomainBased if ENV['RACK_ENV'] == 'production'
   end
   run SoupCMSApiRackApp.new
 end
@@ -59,6 +60,7 @@ end
 map '/' do
   SoupCMSCore.configure do |config|
     config.template_manager.prepend_store(SoupCMS::Core::Template::FileStore.new(SITE_TEMPLATE_DIR))
+    config.application_strategy = SoupCMS::Common::Strategy::Application::SubDomainBased if ENV['RACK_ENV'] == 'production'
   end
   run SoupCMSRackApp.new
 end
