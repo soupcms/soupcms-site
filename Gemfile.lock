@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/soupcms/soupcms-api.git
-  revision: 5386e313f483573d098e20050baf9c40aa815ad0
+  revision: 6219f797776d05f316d24a365bbb64c8918822ee
   specs:
     soupcms-api (0.5.0)
       bson_ext
@@ -8,13 +8,13 @@ GIT
 
 GIT
   remote: git://github.com/soupcms/soupcms-common.git
-  revision: e3e8e331524be0c15ed0d88ae837f6394ee67ee6
+  revision: 3a67afa4f3bebcafbefaf43066424e57bc44ca27
   specs:
     soupcms-common (0.5.0)
 
 GIT
   remote: git://github.com/soupcms/soupcms-core.git
-  revision: 494694c70ebb2771bca09c6bfb989c149960e341
+  revision: bf662cc1975147ea787ba59bcc5653b0d6e10b30
   specs:
     soupcms-core (0.5.0)
       sass
@@ -66,7 +66,7 @@ GEM
       net-http-pipeline
     highline (1.6.20)
     hike (1.2.3)
-    kramdown (1.3.0)
+    kramdown (1.3.1)
     launchy (2.4.2)
       addressable (~> 2.3)
     method_source (0.8.2)
@@ -101,10 +101,12 @@ GEM
       rspec-expectations (= 3.0.0.beta1)
       rspec-mocks (= 3.0.0.beta1)
     rspec-core (3.0.0.beta1)
+      rspec-support (= 3.0.0.beta1)
     rspec-expectations (3.0.0.beta1)
       diff-lcs (>= 1.1.3, < 2.0)
       rspec-support (= 3.0.0.beta1)
     rspec-mocks (3.0.0.beta1)
+      rspec-support (= 3.0.0.beta1)
     rspec-support (3.0.0.beta1)
     sass (3.2.13)
     slim (2.0.2)
