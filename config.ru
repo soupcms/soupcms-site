@@ -12,6 +12,7 @@ require 'soupcms/core'
 require 'soupcms/api'
 
 require 'newrelic_rpm'
+require 'new_relic/agent/instrumentation/rack'
 
 puts "MONGODB_URI_www = #{ENV['MONGODB_URI_www']}"
 puts "MONGODB_URI_blog = #{ENV['MONGODB_URI_blog']}"
@@ -41,6 +42,10 @@ map '/api' do
     config.data_resolver.register(/content$/,SoupCMS::Api::Resolver::KramdownMarkdownResolver)
     config.application_strategy = SoupCMS::Common::Strategy::Application::SubDomainBased
   end
+
+  SoupCMSApiRackApp.class_eval do
+    include ::NewRelic::Agent::Instrumentation::Rack
+  end
   run SoupCMSApiRackApp.new
 end
 
@@ -48,6 +53,10 @@ map '/' do
   SoupCMSCore.configure do |config|
     config.template_manager.prepend_store(SoupCMS::Core::Template::FileStore.new(SITE_TEMPLATE_DIR))
     config.application_strategy = SoupCMS::Common::Strategy::Application::SubDomainBased
+  end
+
+  SoupCMSRackApp.class_eval do
+    include ::NewRelic::Agent::Instrumentation::Rack
   end
   app = SoupCMSRackApp.new
   app.set_redirect('http://soupcms.com/','http://www.soupcms.com/home')
