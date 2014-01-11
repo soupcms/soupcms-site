@@ -1,3 +1,6 @@
+---
+tags: [cms, design principles]
+---
 # Why another CMS?
 
 Using different CMS system on projects varying from heavy weights like Teamsite, Drupal and lightweights like Wordpress or rails based Radiant or LocomotiveCMS. I aways found problems with all these CMS systems is, I had to code my application logic in the way CMS system outlines either as plugins or modules etc.

@@ -13,7 +13,6 @@ gem 'soupcms-api', github: 'soupcms/soupcms-api'
 #gem 'soupcms-core', path: '../soupcms-core'
 #gem 'soupcms-api', path: '../soupcms-api'
 
-
 gem 'redcarpet'
 gem 'kramdown'
 gem 'coderay'
