@@ -63,6 +63,9 @@ map '/' do
   app.set_redirect('http://www.soupcms.com/','http://www.soupcms.com/home')
   app.set_redirect('http://blog.soupcms.com/','http://blog.soupcms.com/home')
   app.set_redirect('http://docs.soupcms.com/','http://docs.soupcms.com/home')
+
+  app.router.add 'chapters/:release/:slug', SoupCMS::Core::Controller::ModelController, 'chapters'
+
   run app
 end
 

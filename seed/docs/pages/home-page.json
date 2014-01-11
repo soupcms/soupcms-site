@@ -33,7 +33,10 @@
                         {
                             "type": "soupcms-api",
                             "model": "chapters",
-                            "fields": ["title", "slug"],
+                            "filters" :{
+                                "release" : "#{context['release']}"
+                            },
+                            "fields": ["title", "release","slug"],
                             "sort": ["chapter_number"],
                             "limit" : 100,
                             "return": "chapters"

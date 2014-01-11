@@ -24,7 +24,7 @@
                     "recipes": [
                         {
                             "type": "soupcms-api",
-                            "model": "/#{context.model_name}/slug/#{context.slug}",
+                            "model": "/#{context.model_name}/release/#{context['release']}/slug/#{context.slug}",
                             "return": "toc-document"
                         },
                         {
@@ -63,7 +63,10 @@
                         {
                             "type": "soupcms-api",
                             "model": "chapters",
-                            "fields": ["title", "slug"],
+                            "filters" :{
+                                "release" : "#{context['release']}"
+                            },
+                            "fields": ["title", "release","slug"],
                             "sort": ["chapter_number"],
                             "limit" : 100,
                             "return": "chapters"
@@ -87,7 +90,7 @@
                     "recipes": [
                         {
                             "type": "soupcms-api",
-                            "model": "#{context.model_name}/slug/#{context.slug}",
+                            "model": "#{context.model_name}/release/#{context['release']}/slug/#{context.slug}",
                             "return": "chapter"
                         }
                     ],

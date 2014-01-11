@@ -20,7 +20,7 @@
             {
                 "label": "Documentation",
                 "link" : {
-                    "url": "http://docs.soupcms.com/home"
+                    "url": "http://docs.soupcms.com/home?release=v0.5"
                 },
                 "font_icon" : "fa fa-file-text"
             }
