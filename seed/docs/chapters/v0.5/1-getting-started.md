@@ -1,1 +1,1 @@
-# Getting started with soupCMS in 7 min
+# Getting started

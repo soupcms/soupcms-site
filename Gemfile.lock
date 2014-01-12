@@ -1,28 +1,4 @@
 GIT
-  remote: git://github.com/soupcms/soupcms-api.git
-  revision: c6f2823bba368dbca5382014fe7c1c41f775cb50
-  specs:
-    soupcms-api (0.5.0)
-      bson_ext
-      mongo
-
-GIT
-  remote: git://github.com/soupcms/soupcms-common.git
-  revision: 8a31793329593afe0aad647a2a10050c60310fec
-  specs:
-    soupcms-common (0.5.0)
-
-GIT
-  remote: git://github.com/soupcms/soupcms-core.git
-  revision: fa0859d8ab9c6a6c97c3c4e4609b44890c9aa86f
-  specs:
-    soupcms-core (0.5.0)
-      sass
-      slim
-      sprockets-helpers
-      tilt
-
-GIT
   remote: git://github.com/sstephenson/sprockets.git
   revision: 488787e22d91b138a4b8403e6142a86e4559bdab
   specs:
@@ -34,6 +10,27 @@ PATH
   remote: .
   specs:
     soupcms-site (0.5.0)
+
+PATH
+  remote: ../soupcms-api
+  specs:
+    soupcms-api (0.5.0)
+      bson_ext
+      mongo
+
+PATH
+  remote: ../soupcms-common
+  specs:
+    soupcms-common (0.5.0)
+
+PATH
+  remote: ../soupcms-core
+  specs:
+    soupcms-core (0.5.0)
+      sass
+      slim
+      sprockets-helpers
+      tilt
 
 GEM
   remote: https://rubygems.org/

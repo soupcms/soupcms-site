@@ -1,2 +1,2 @@
-# soupCMS Seed documentation
+# soupCMS Rake Seed documentation
 
