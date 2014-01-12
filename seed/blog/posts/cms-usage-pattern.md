@@ -7,7 +7,7 @@ Now days every business wants CMS capability in their app, at minimum for home p
 I have worked with multiple feature rich CMS products, which provides business critical features such as versioning, publishing work flow, content promotion... . However, one of the key pain area in all of this feature rich CMS products is that development of remaining custom components either as plugins or customization modules if very difficult. Developing these ~20% of the custom components takes lot of time & effort with specialized skills. Most of the time we need to hack to get custom component build in existing CMS.
 
 
-
+_____
 
 ## Based on usage pattern of the CMS
 
@@ -25,7 +25,7 @@ Here the site required lot of content to be CMS managed like product details, pr
 ### *Type 3: CMS for the namesake*
 In this category site requires only few pages to be content manges such as About, Contact-Us, Legal etc. That's why it is CMS for the namesake. But it is important since this is required in each and every site. Also there is need of managing navigation, footer partials on the site. This is almost required in each and every site for pages like *About*, *Contact*, *Legal*... pages in any website
 
-
+_____
 
 <div class="lead">
 Also look into following criteria while choosing CMS,
