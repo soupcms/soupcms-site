@@ -94,30 +94,6 @@
                         "type": "slim",
                         "name": "bootstrap/article"
                     }
-                }
-            ]
-        },
-        {
-            "name": "footer",
-            "modules": [
-                {
-                    "recipes": [
-                        {
-                            "type": "http",
-                            "url" : "#{context.application.soupcms_api_url}/schemaless/name/footer",
-                            "return": "footer"
-                        }
-                    ],
-                    "template": {
-                        "type": "slim",
-                        "name": "bootstrap/footer"
-                    }
-                },
-                {
-                    "template": {
-                        "type": "slim",
-                        "name": "meta/analytics/google"
-                    }
                 },
                 {
                     "template": {
