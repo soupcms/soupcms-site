@@ -1,6 +1,6 @@
 # Soupcms::Site
 
-TODO: Write a gem description
+Eat your own dog food by building soupcms.com using soupCMS.
 
 ## Installation
 
