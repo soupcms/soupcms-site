@@ -14,7 +14,7 @@ require 'soupcms/api'
 require 'newrelic_rpm'
 require 'new_relic/agent/instrumentation/rack'
 
-if ENV['environment'] == 'production'
+if ENV['RACK_ENV'] == 'production'
   SoupCMS::Common::Util::HttpCacheStrategy.default_max_age = 3600
 
   # http client with caching based on cache headers
