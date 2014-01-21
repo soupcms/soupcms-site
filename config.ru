@@ -14,10 +14,20 @@ require 'soupcms/api'
 require 'newrelic_rpm'
 require 'new_relic/agent/instrumentation/rack'
 
-puts "MONGODB_URI_www = #{ENV['MONGODB_URI_www']}"
-puts "MONGODB_URI_blog = #{ENV['MONGODB_URI_blog']}"
-puts "MONGODB_URI_docs = #{ENV['MONGODB_URI_docs']}"
+if ENV['environment'] == 'production'
+  SoupCMS::Common::Util::HttpCacheStrategy.default_max_age = 3600
 
+  # http client with caching based on cache headers
+  SoupCMS::Core::Utils::HttpClient.connection = Faraday.new do |faraday|
+    faraday.use FaradayMiddleware::RackCompatible, Rack::Cache::Context,
+                :metastore => 'heap:/',
+                :entitystore => 'heap:/',
+                :verbose => false,
+                :ignore_headers => %w[Set-Cookie X-Content-Digest]
+
+    faraday.adapter Faraday.default_adapter
+  end
+end
 
 SITE_TEMPLATE_DIR = File.join(File.dirname(__FILE__), 'ui')
 PUBLIC_DIR = File.join(File.dirname(__FILE__), 'public')
