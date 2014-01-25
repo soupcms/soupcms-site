@@ -19,7 +19,7 @@ gem 'coderay'
 gem 'nokogiri'
 
 gem 'foreman'
-gem 'unicorn'
+gem 'puma'
 gem 'rack-cache'
 gem 'faraday'
 gem 'faraday_middleware'
