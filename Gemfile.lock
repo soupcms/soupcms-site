@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/puma/puma.git
+  revision: 4b866671dd2c604a4138f9b34e14fd98948ed52c
+  specs:
+    puma (2.7.1)
+      rack (>= 1.1, < 2.0)
+
+GIT
   remote: git://github.com/soupcms/soupcms-api.git
   revision: 5c6a31e9fd7e65f5f3ce77e01d9d8d3cb7a452cb
   specs:
@@ -85,8 +92,6 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    puma (2.7.1)
-      rack (>= 1.1, < 2.0)
     pusher-client (0.4.0)
       websocket (~> 1.0.0)
     rack (1.5.2)
@@ -146,7 +151,7 @@ DEPENDENCIES
   mongo
   newrelic_rpm
   nokogiri
-  puma
+  puma!
   rack-cache
   rack-test
   rake
