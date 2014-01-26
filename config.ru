@@ -16,17 +16,6 @@ require 'new_relic/agent/instrumentation/rack'
 
 if ENV['RACK_ENV'] == 'production'
   SoupCMS::Common::Util::HttpCacheStrategy.default_max_age = 3600
-
-  # http client with caching based on cache headers
-  SoupCMS::Core::Utils::HttpClient.connection = Faraday.new do |faraday|
-    faraday.use FaradayMiddleware::RackCompatible, Rack::Cache::Context,
-                :metastore => 'heap:/',
-                :entitystore => 'heap:/',
-                :verbose => false,
-                :ignore_headers => %w[Set-Cookie X-Content-Digest]
-
-    faraday.adapter Faraday.default_adapter
-  end
 end
 
 SITE_TEMPLATE_DIR = File.join(File.dirname(__FILE__), 'ui')

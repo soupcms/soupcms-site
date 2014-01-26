@@ -6,30 +6,6 @@ GIT
       rack (>= 1.1, < 2.0)
 
 GIT
-  remote: git://github.com/soupcms/soupcms-api.git
-  revision: 5c6a31e9fd7e65f5f3ce77e01d9d8d3cb7a452cb
-  specs:
-    soupcms-api (0.5.0)
-      bson_ext
-      mongo
-
-GIT
-  remote: git://github.com/soupcms/soupcms-common.git
-  revision: 8a31793329593afe0aad647a2a10050c60310fec
-  specs:
-    soupcms-common (0.5.0)
-
-GIT
-  remote: git://github.com/soupcms/soupcms-core.git
-  revision: 472c283dcbe3bd81376a364d59e24f66b7af53c8
-  specs:
-    soupcms-core (0.5.0)
-      sass
-      slim
-      sprockets-helpers
-      tilt
-
-GIT
   remote: git://github.com/sstephenson/sprockets.git
   revision: 488787e22d91b138a4b8403e6142a86e4559bdab
   specs:
@@ -42,6 +18,27 @@ PATH
   specs:
     soupcms-site (0.5.0)
 
+PATH
+  remote: ../soupcms-api
+  specs:
+    soupcms-api (0.5.0)
+      bson_ext
+      mongo
+
+PATH
+  remote: ../soupcms-common
+  specs:
+    soupcms-common (0.5.0)
+
+PATH
+  remote: ../soupcms-core
+  specs:
+    soupcms-core (0.5.0)
+      sass
+      slim
+      sprockets-helpers
+      tilt
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,6 +48,7 @@ GEM
     bson_ext (1.9.2)
       bson (~> 1.9.2)
     coderay (1.1.0)
+    daemon_controller (1.1.8)
     diff-lcs (1.2.5)
     dotenv (0.9.0)
     ethon (0.6.2)
@@ -88,6 +86,10 @@ GEM
     newrelic_rpm (3.7.1.182)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    passenger (4.0.36)
+      daemon_controller (>= 1.1.0)
+      rack
+      rake (>= 0.8.1)
     pry (0.9.12.4)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -151,6 +153,7 @@ DEPENDENCIES
   mongo
   newrelic_rpm
   nokogiri
+  passenger
   puma!
   rack-cache
   rack-test
