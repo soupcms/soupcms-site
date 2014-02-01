@@ -54,4 +54,35 @@ _____
 
 ## High level sequence diagram of soupcms workflow
 
-![soupCMS High level system architecture diagram](/assets/docs/chapters/images/soupcms-sequence-diagram.svg "soupCMS High level system architecture diagram")
+<div class="sequence-diagram">
+
+participant Browser/User as U
+participant Responsice Image Server as R
+participant sopuCMS Core as C
+participant soupCMS API as A
+participant soupCMS mongoDB as D
+participant Other Data Sources as E
+
+U->C: request a page (url)
+C->C: resolve page and model for request URL
+C->A: get model
+A->D: get model
+C->A: get page for the model
+A->D: get page for the model
+
+Note left of C: for each area in page
+Note left of C: for each module in area
+Note right of C: for each recipe in module
+C->C: execute recipe
+C->A: fetch recipe data
+C->E: fetch recipe data
+C->C: post process recipe data
+Note right of C: render template
+C->C: render module template using recipe data
+Note right of C: render layout
+C->C: using layout & module/area HTML render page
+C->U: render page
+U->C: fetch assets JS, CSS & images
+U->R: fetch responsive images
+
+</div>

@@ -19,7 +19,6 @@ gem 'coderay'
 gem 'nokogiri'
 
 gem 'foreman'
-gem 'puma', github: 'puma/puma'
 gem 'passenger'
 gem 'rack-cache'
 gem 'faraday'

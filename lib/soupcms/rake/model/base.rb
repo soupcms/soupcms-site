@@ -14,6 +14,8 @@ module SoupCMS
           case type
             when 'json'
               SoupCMS::Rake::Model::Base.new(file).create
+            when 'yml'
+              SoupCMS::Rake::Model::Yaml.new(file).create
             when 'md'
               case model
                 when 'posts'

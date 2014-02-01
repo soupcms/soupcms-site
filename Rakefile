@@ -8,7 +8,7 @@ task :default => :spec
 
 
 task :seed do
-  Dir.glob('seed/**/*.{json,md}').each do |afile|
+  Dir.glob('seed/**/*.{json,md,yml}').each do |afile|
     if afile.include?('ref_files')
       #puts "Ignoring ref file... #{afile}"
     else

@@ -34,7 +34,7 @@ module SoupCMS
         end
 
         def build_chapter_links
-          chapters = Dir.glob(File.join(File.dirname(file), '/*.{json,md}')).to_a
+          chapters = Dir.glob(File.join(File.dirname(file), '/*.{json,md,yml}')).to_a
           index = chapters.index(file.path)
           if index > 0
             model = SoupCMS::Rake::Model::Chapter.new(File.new(chapters[index-1]))
