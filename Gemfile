@@ -15,7 +15,7 @@ gem 'redcarpet'
 gem 'kramdown'
 gem 'coderay'
 gem 'nokogiri'
-gem 'sprockets'
+gem 'sprockets', github: 'sstephenson/sprockets'
 
 gem 'foreman'
 gem 'passenger'
