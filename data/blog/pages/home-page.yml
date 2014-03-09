@@ -1,0 +1,27 @@
+---
+  slug: "home"
+  title: "Blog"
+  seo: 
+    keywords: "sunitparekh, sunit, parekh, blog, technical, software"
+    description: "Sunit Parekh blog"
+  areas: 
+    - 
+      name: "body"
+      modules: 
+        - 
+          recipes: 
+            - 
+              type: "soupcms-api"
+              model: "posts"
+              fields: 
+                - "title"
+                - "slug"
+                - "description"
+                - "hero_image"
+                - "author_ref"
+                - "tags"
+                - "publish_datetime"
+              return: "articles"
+          template: 
+            type: "slim"
+            name: "bootstrap/article-list-view"
