@@ -34,7 +34,6 @@ end
 
 map '/api' do
   SoupCMSApi.configure do |config|
-    config.data_resolver.register(/content$/,SoupCMS::Api::Resolver::RedcarpetMarkdownResolver)
     config.data_resolver.register(/content$/,SoupCMS::Api::Resolver::KramdownMarkdownResolver)
     config.application_strategy = SoupCMS::Common::Strategy::Application::SubDomainBased
   end
