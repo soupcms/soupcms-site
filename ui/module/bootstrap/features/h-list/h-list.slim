@@ -1,0 +1,11 @@
+- features = data['features']['features']
+.row.featurette
+  - features.each do |feature|
+    .col-sm-4
+      .visual
+        - if feature['image']
+          img.img-responsive alt="#{feature['title']}" src="#{feature['image']['url']}"
+        - if feature['font_icon']
+          i class="#{feature['font_icon']}"
+      h3 = feature['title']
+      p = feature['description']

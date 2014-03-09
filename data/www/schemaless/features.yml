@@ -1,0 +1,27 @@
+---
+  name: features
+  features:
+    -
+      font_icon: fa fa-magic fa-5x
+      title: unObstrusive
+      description: CMS that integrates within your application as library and provide all CMS features
+    -
+      font_icon: fa fa-mobile fa-5x
+      title: Responsive Design
+      description: easily and efficiently scales your website, from phones to tablets to desktops
+    -
+      font_icon: fa fa-chain-broken fa-5x
+      title: Dependency Independent
+      description: CMS system with ZERO dependency, easy with upgradation and compatibilty with main application
+    -
+      font_icon: fa fa-code-fork fa-5x
+      title: Multiple Data Source
+      description: first class support to consume data from different sources, internal & external
+    -
+      font_icon: fa fa-power-off fa-5x
+      title: Feature Toggle
+      description: easily switch ON or OFF features, by default OFF. Dependency gets added based on feature enabled.
+    -
+      font_icon: fa fa-puzzle-piece fa-5x
+      title: Modular Page Assembly
+      description: Build your page with library of UI modules, using data fetched from different sources

@@ -2,6 +2,18 @@
   slug: "home"
   title: "Welcome to soupcms, unobtrusive CMS framework"
   seo: 
-    keywords: "sunitparekh, sunit, parekh, blog, technical, software"
-    description: "Sunit Parekh blog"
-  areas: []
+    keywords: "sopuCMS, unobstrusive cms home page"
+    description: "sopuCMS, unobstrusive cms home page"
+  areas:
+    -
+      name: "body"
+      modules:
+        -
+          recipes:
+            -
+              type: "http"
+              url: "#{context.application.soupcms_api_url}/schemaless/name/features"
+              return: "features"
+          template:
+            type: "slim"
+            name: "bootstrap/features/h-list"

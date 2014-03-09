@@ -3,8 +3,9 @@
     name: "enricher"
   layout: 
     type: "slim"
-    name: "bootstrap/sidebar"
-  areas: 
+    name: "bootstrap/full-width"
+
+  areas:
     - 
       name: "meta"
       modules: 
