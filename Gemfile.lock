@@ -48,10 +48,6 @@ GEM
     coderay (1.1.0)
     daemon_controller (1.1.8)
     dotenv (0.9.0)
-    faraday (0.8.9)
-      multipart-post (~> 1.2.0)
-    faraday_middleware (0.9.0)
-      faraday (>= 0.7.4, < 0.9)
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
@@ -60,7 +56,6 @@ GEM
     mini_portile (0.5.2)
     mongo (1.9.2)
       bson (~> 1.9.2)
-    multipart-post (1.2.0)
     newrelic_rpm (3.7.3.199)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
@@ -69,10 +64,7 @@ GEM
       rack
       rake (>= 0.8.1)
     rack (1.5.2)
-    rack-cache (1.2)
-      rack (>= 0.4)
     rake (10.1.1)
-    redcarpet (3.1.1)
     sass (3.2.14)
     slim (2.0.2)
       temple (~> 0.6.6)
@@ -89,16 +81,12 @@ PLATFORMS
 DEPENDENCIES
   bson_ext
   coderay
-  faraday
-  faraday_middleware
   foreman
   kramdown
   mongo
   newrelic_rpm
   nokogiri
   passenger
-  rack-cache
-  redcarpet
   soupcms-api!
   soupcms-cli!
   soupcms-common!
