@@ -18,6 +18,7 @@ gem 'sprockets', github: 'sstephenson/sprockets'
 
 gem 'foreman'
 gem 'passenger'
+gem 'puma'
 gem 'mongo'
 gem 'bson_ext'
 gem 'newrelic_rpm'
