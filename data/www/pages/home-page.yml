@@ -1,19 +1,19 @@
 ---
-  slug: "home"
-  title: "Welcome to soupcms, unobtrusive CMS framework"
+  slug: home
+  title: Welcome to soupcms, unobtrusive CMS framework
   seo: 
-    keywords: "soupCMS, unObtrusive cms home page"
-    description: "soupCMS, unObtrusive cms home page"
+    keywords: soupCMS, unObtrusive cms home page
+    description: soupCMS, unObtrusive cms home page
   areas:
     -
-      name: "body"
+      name: body
       modules:
         -
           recipes:
             -
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/features"
-              return: "features"
+              return: features
           template:
-            type: "slim"
-            name: "bootstrap/features/h-list"
+            type: slim
+            name: bootstrap/features/h-list

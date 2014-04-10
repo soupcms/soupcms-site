@@ -1,78 +1,78 @@
 ---
   meta: 
-    model: "chapters"
+    model: chapters
   areas: 
     - 
-      name: "sidebar"
+      name: sidebar
       modules: 
         - 
           recipes: 
             - 
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/social-toolbar"
-              return: "social-toolbar"
+              return: social-toolbar
           template: 
-            type: "slim"
-            name: "bootstrap/social-toolbar"
+            type: slim
+            name: bootstrap/social-toolbar
         - 
           recipes: 
             - 
-              type: "soupcms-api"
+              type: soupcms-api
               model: "/#{context.model_name}/release/#{context['release']}/slug/#{context.slug}"
-              return: "toc-document"
+              return: toc-document
             - 
-              type: "post-processor"
-              processor: "SoupCMS::Core::Processor::NokogiriTOC"
+              type: post-processor
+              processor: SoupCMS::Core::Processor::NokogiriTOC
               config: 
                 toc_for: "#{data['toc-document']['content']['value']}"
                 levels: 
-                  - "h2"
-                  - "h3"
-                  - "h4"
-              return: "table-of-content"
+                  - h2
+                  - h3
+                  - h4
+              return: table-of-content
           template: 
-            type: "slim"
-            name: "bootstrap/table-of-content"
+            type: slim
+            name: bootstrap/table-of-content
             config: 
-              title: "Contents"
+              title: Contents
         - 
           recipes: 
             - 
-              type: "soupcms-api"
-              url: "chapters/tag-cloud"
-              return: "tag-cloud"
+              type: soupcms-api
+              url: chapters/tag-cloud
+              return: tag-cloud
           template: 
-            type: "slim"
-            name: "bootstrap/tag-cloud"
+            type: slim
+            name: bootstrap/tag-cloud
         - 
           recipes: 
             - 
-              type: "soupcms-api"
-              model: "chapters"
+              type: soupcms-api
+              model: chapters
               filters: 
                 release: "#{context['release']}"
               fields: 
-                - "title"
-                - "release"
-                - "slug"
+                - title
+                - release
+                - slug
               sort: 
-                - "chapter_number"
+                - chapter_number
               limit: 100
-              return: "chapters"
+              return: chapters
           template: 
-            type: "slim"
-            name: "bootstrap/book/table-of-content"
+            type: slim
+            name: bootstrap/book/table-of-content
             config: 
-              title: "Chapters"
+              title: Chapters
     - 
-      name: "body"
+      name: body
       modules: 
         - 
           recipes: 
             - 
-              type: "soupcms-api"
+              type: soupcms-api
               model: "#{context.model_name}/release/#{context['release']}/slug/#{context.slug}"
-              return: "chapter"
+              return: chapter
           template: 
-            type: "slim"
-            name: "bootstrap/book/chapter"
+            type: slim
+            name: bootstrap/book/chapter

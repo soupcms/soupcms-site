@@ -1,59 +1,59 @@
 ---
   meta: 
-    name: "enricher"
+    name: enricher
   layout: 
-    type: "slim"
-    name: "bootstrap/full-width"
+    type: slim
+    name: bootstrap/full-width
 
   areas:
     - 
-      name: "meta"
+      name: meta
       modules: 
         - 
           template: 
-            type: "slim"
-            name: "meta/page-title"
+            type: slim
+            name: meta/page-title
     - 
-      name: "header"
+      name: header
       modules: 
         - 
           recipes: 
             - 
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/navigation"
-              return: "navigation"
+              return: navigation
           template: 
-            type: "slim"
-            name: "bootstrap/navigation"
+            type: slim
+            name: bootstrap/navigation
         - 
           recipes: 
             - 
-              type: "inline"
+              type: inline
               data: 
-                title: "soupCMS"
-                subtitle: "unObtrusive CMS framework"
-                sub_headline: "unObtrusive CMS framework that integrates within your application"
+                title: soupCMS
+                subtitle: unObtrusive CMS framework
+                sub_headline: unObtrusive CMS framework that integrates within your application
                 image: 
-                  source: "cloudinary"
-                  base_url: "http://res.cloudinary.com/sunitparekh/image/upload"
-                  desktop: "purple-textures-low_xiamgc.jpg"
-              return: "page-header"
+                  source: cloudinary
+                  base_url: http://res.cloudinary.com/sunitparekh/image/upload
+                  desktop: purple-textures-low_xiamgc.jpg
+              return: page-header
           template: 
-            type: "slim"
-            name: "bootstrap/page-header"
+            type: slim
+            name: bootstrap/page-header
     - 
-      name: "footer"
+      name: footer
       modules: 
         - 
           recipes: 
             - 
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/footer"
-              return: "footer"
+              return: footer
           template: 
-            type: "slim"
-            name: "bootstrap/footer"
+            type: slim
+            name: bootstrap/footer
         - 
           template: 
-            type: "slim"
-            name: "meta/analytics/google"
+            type: slim
+            name: meta/analytics/google

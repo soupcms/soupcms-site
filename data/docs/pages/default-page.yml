@@ -1,54 +1,54 @@
 ---
   meta: 
-    name: "enricher"
+    name: enricher
   layout: 
-    type: "slim"
-    name: "bootstrap/right-sidebar"
+    type: slim
+    name: bootstrap/right-sidebar
   areas: 
     - 
-      name: "meta"
+      name: meta
       modules: 
         - 
           template: 
-            type: "slim"
-            name: "meta/page-title"
+            type: slim
+            name: meta/page-title
     - 
-      name: "header"
+      name: header
       modules: 
         - 
           recipes: 
             - 
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/navigation"
-              return: "navigation"
+              return: navigation
           template: 
-            type: "slim"
-            name: "bootstrap/navigation"
+            type: slim
+            name: bootstrap/navigation
     - 
-      name: "sidebar"
+      name: sidebar
       modules: 
         - 
           recipes: 
             - 
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/social-toolbar"
-              return: "social-toolbar"
+              return: social-toolbar
           template: 
-            type: "slim"
-            name: "bootstrap/social-toolbar"
+            type: slim
+            name: bootstrap/social-toolbar
     - 
-      name: "footer"
+      name: footer
       modules: 
         - 
           recipes: 
             - 
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/footer"
-              return: "footer"
+              return: footer
           template: 
-            type: "slim"
-            name: "bootstrap/footer"
+            type: slim
+            name: bootstrap/footer
         - 
           template: 
-            type: "slim"
-            name: "meta/analytics/google"
+            type: slim
+            name: meta/analytics/google

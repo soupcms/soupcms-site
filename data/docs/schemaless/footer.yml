@@ -4,14 +4,18 @@
   links: 
     - 
       label: About
-      link: http://www.soupcms.com/about
+      link:
+        url: http://www.soupcms.com/about
     - 
       label: Contact Us
-      link: http://www.soupcms.com/contact-us
+      link:
+        url: http://www.soupcms.com/contact-us
       font_icon: fa fa-envelope-o
     - 
       label: License
-      link: http://opensource.org/licenses/mit-license.html
+      link:
+        url: http://opensource.org/licenses/mit-license.html
     - 
       label: Blog
-      link: http://blog.soupcms.com/home
+      link:
+        url: http://blog.soupcms.com/home

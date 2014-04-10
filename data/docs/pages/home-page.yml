@@ -1,40 +1,40 @@
 ---
-  slug: "home"
-  title: "Documentation"
+  slug: home
+  title: soupCMS Documentation
   seo: 
-    keywords: "soupCMS documentation"
-    description: "soupCMS documentation"
+    keywords: soupCMS documentation
+    description: soupCMS documentation
   areas: 
     - 
-      name: "body"
+      name: body
       modules: 
         - 
           recipes: 
             - 
-              type: "inline"
+              type: inline
               data: 
-                title: "soupCMS Documentation"
-              return: "page-header"
+                title: soupCMS Documentation
+              return: page-header
           template: 
-            type: "slim"
-            name: "bootstrap/simple-page-header"
+            type: slim
+            name: bootstrap/simple-page-header
         - 
           recipes: 
             - 
-              type: "soupcms-api"
-              model: "chapters"
+              type: soupcms-api
+              model: chapters
               filters: 
                 release: "#{context['release']}"
               fields: 
-                - "title"
-                - "release"
-                - "slug"
+                - title
+                - release
+                - slug
               sort: 
-                - "chapter_number"
+                - chapter_number
               limit: 100
-              return: "chapters"
+              return: chapters
           template: 
-            type: "slim"
-            name: "bootstrap/book/table-of-content"
+            type: slim
+            name: bootstrap/book/table-of-content
             config: 
-              title: "Table of Content"
+              title: Table of Content

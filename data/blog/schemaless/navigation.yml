@@ -12,9 +12,9 @@
     left:
       - 
         label: Blog
-        link: 
+        link:
           url: http://blog.soupcms.com/home
-      - 
+      -
         label: Documentation
         link: 
           url: http://docs.soupcms.com/home?release=v0.5

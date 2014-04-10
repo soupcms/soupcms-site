@@ -1,79 +1,79 @@
 ---
   meta: 
-    name: "enricher"
+    name: enricher
   layout: 
-    type: "slim"
-    name: "bootstrap/right-sidebar"
+    type: slim
+    name: bootstrap/right-sidebar
   areas: 
     - 
-      name: "meta"
+      name: meta
       modules: 
         - 
           template: 
-            type: "slim"
-            name: "meta/page-title"
+            type: slim
+            name: meta/page-title
     - 
-      name: "header"
+      name: header
       modules: 
         - 
           recipes: 
             - 
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/navigation"
-              return: "navigation"
+              return: navigation
           template: 
-            type: "slim"
-            name: "bootstrap/navigation"
+            type: slim
+            name: bootstrap/navigation
         - 
           recipes: 
             - 
-              type: "inline"
+              type: inline
               data: 
-                title: "soupCMS blog"
-                subtitle: "unobtrusive CMS framework"
-                sub_headline: "unobtrusive CMS framework that integrates within your application"
+                title: soupCMS blog
+                subtitle: unobtrusive CMS framework
+                sub_headline: unobtrusive CMS framework that integrates within your application
                 image: 
-                  source: "cloudinary"
-                  base_url: "http://res.cloudinary.com/sunitparekh/image/upload"
-                  desktop: "purple-textures-low_xiamgc.jpg"
-              return: "page-header"
+                  source: cloudinary
+                  base_url: http://res.cloudinary.com/sunitparekh/image/upload
+                  desktop: purple-textures-low_xiamgc.jpg
+              return: page-header
           template: 
-            type: "slim"
-            name: "bootstrap/page-header"
+            type: slim
+            name: bootstrap/page-header
     - 
-      name: "sidebar"
+      name: sidebar
       modules: 
         - 
           recipes: 
             - 
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/social-toolbar"
-              return: "social-toolbar"
+              return: social-toolbar
           template: 
-            type: "slim"
-            name: "bootstrap/social-toolbar"
+            type: slim
+            name: bootstrap/social-toolbar
         - 
           recipes: 
             - 
-              type: "soupcms-api"
-              url: "posts/tag-cloud"
-              return: "tag-cloud"
+              type: soupcms-api
+              url: posts/tag-cloud
+              return: tag-cloud
           template: 
-            type: "slim"
-            name: "bootstrap/tag-cloud"
+            type: slim
+            name: bootstrap/tag-cloud
     - 
-      name: "footer"
+      name: footer
       modules: 
         - 
           recipes: 
             - 
-              type: "http"
+              type: http
               url: "#{context.application.soupcms_api_url}/schemaless/name/footer"
-              return: "footer"
+              return: footer
           template: 
-            type: "slim"
-            name: "bootstrap/footer"
+            type: slim
+            name: bootstrap/footer
         - 
           template: 
-            type: "slim"
-            name: "meta/analytics/google"
+            type: slim
+            name: meta/analytics/google
