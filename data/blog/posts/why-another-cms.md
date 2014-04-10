@@ -2,7 +2,7 @@
 tags: [cms, design principles]
 title: Why another CMS?
 description: Here is why I decided to build my own light-weight CMS. This also can help others what should be watch out for while choosing CMS.
-publish_datetime: 2014-04-04T00:00:07.0Z
+publish_datetime: 2014-04-09T00:00:07.0Z
 
 ---
 

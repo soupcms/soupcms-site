@@ -1,7 +1,7 @@
 ---
 tags: [deployment, getting-started]
 title: Getting started with soupCMS
-publish_datetime: 2014-04-04T00:00:07.0Z
+publish_datetime: 2014-04-09T00:00:07.0Z
 ---
 
 ## Setup your blog using 5 simple steps

@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/soupcms/soupcms-cli.git
-  revision: 4358d1a6cfe9aaeb8e266649319e8477233550dc
+  revision: b0f90ccbb8b6a556be5e23017a837073e5b77495
   specs:
     soupcms-cli (0.5.0)
       bson_ext (~> 1.9)
@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: git://github.com/soupcms/soupcms-core.git
-  revision: e2bb2c3a68eef63ca1579b381200248c0cb04041
+  revision: d365ca3495b87bfabe5f2357abf91a2542898a61
   specs:
     soupcms-core (0.5.0)
       sass
