@@ -2,8 +2,8 @@
   slug: "home"
   title: "Welcome to soupcms, unobtrusive CMS framework"
   seo: 
-    keywords: "sopuCMS, unObstrusive cms home page"
-    description: "sopuCMS, unObstrusive cms home page"
+    keywords: "soupCMS, unObtrusive cms home page"
+    description: "soupCMS, unObtrusive cms home page"
   areas:
     -
       name: "body"

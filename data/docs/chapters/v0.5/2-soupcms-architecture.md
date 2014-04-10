@@ -57,8 +57,8 @@ _____
 <div class="sequence-diagram">
 
 participant Browser/User as U
-participant Responsice Image Server as R
-participant sopuCMS Core as C
+participant Responsive Image Server as R
+participant soupCMS Core as C
 participant soupCMS API as A
 participant soupCMS mongoDB as D
 participant Other Data Sources as E

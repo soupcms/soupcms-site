@@ -3,7 +3,7 @@
   features:
     -
       font_icon: fa fa-magic fa-5x
-      title: unObstrusive
+      title: unObtrusive
       description: CMS that integrates within your application as library and provide all CMS features
     -
       font_icon: fa fa-mobile fa-5x

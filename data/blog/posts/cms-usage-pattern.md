@@ -1,7 +1,9 @@
 ---
 tags: [cms]
+title: CMS usage pattern, which one fits yours need?
+description: Identifying what is expected out of CMS is most important factor before choosing or building the CMS. Here I describe 3 fundamental types of CMS need and help you with the criteria while deciding CMS.
+publish_datetime: 2014-04-04T00:00:07.0Z
 ---
-# CMS usage pattern, which one fits yours need?
 
 Now days every business wants CMS capability in their app, at minimum for home page to show promotions, alerts, news & messages to end users. On each and every project I have been on in last 5 odd years, CMS was part of application in one or the other way. At the start of the project I always had to think and decide which CMS system should I go for. And working with different domain, some patterns started emerging in my thoughts and helped me making decision.
 I have worked with multiple feature rich CMS products, which provides business critical features such as versioning, publishing work flow, content promotion... . However, one of the key pain area in all of this feature rich CMS products is that development of remaining custom components either as plugins or customization modules if very difficult. Developing these ~20% of the custom components takes lot of time & effort with specialized skills. Most of the time we need to hack to get custom component build in existing CMS.
