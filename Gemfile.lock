@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/soupcms/soupcms-api.git
-  revision: bfa438f569c60a381f94ad46151ca92903895ada
+  revision: a49a07c4a5dcb8cbc83d60f3ac5b9d9354a731ca
   specs:
     soupcms-api (0.5.0)
       bson_ext
@@ -8,12 +8,12 @@ GIT
 
 GIT
   remote: git://github.com/soupcms/soupcms-cli.git
-  revision: b0f90ccbb8b6a556be5e23017a837073e5b77495
+  revision: 69e7375ecd21104c18f1a985a610b9ed723f80c9
   specs:
-    soupcms-cli (0.5.0)
-      bson_ext (~> 1.9)
-      mongo (~> 1.9)
-      thor (~> 0.18)
+    soupcms-cli (0.5.2)
+      bson_ext (~> 1.10)
+      mongo (~> 1.10)
+      thor (~> 0.19)
 
 GIT
   remote: git://github.com/soupcms/soupcms-common.git
@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: git://github.com/soupcms/soupcms-core.git
-  revision: 4141c3e1a1453858d937b6f06d6764ba1751af7b
+  revision: 36b208c0e0182ccf55abbb054638a41915bcfbfc
   specs:
     soupcms-core (0.5.0)
       sass
@@ -33,6 +33,7 @@ GIT
 GIT
   remote: git://github.com/sstephenson/sprockets.git
   revision: 2a658ff971b44ee995bf3205a991005f8dbdca1d
+  ref: 2a658ff971b44ee995bf3205a991005f8dbdca1d
   specs:
     sprockets (2.12.0)
       hike (~> 1.2)
@@ -58,7 +59,7 @@ GEM
     newrelic_rpm (3.7.3.204)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-    passenger (4.0.40)
+    passenger (4.0.41)
       daemon_controller (>= 1.2.0)
       rack
       rake (>= 0.8.1)

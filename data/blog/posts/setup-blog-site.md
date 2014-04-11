@@ -4,7 +4,7 @@ title: Getting started with soupCMS
 publish_datetime: 2014-04-09T00:00:07.0Z
 ---
 
-## Setup your blog using 5 simple steps
+## Setup your blog site using soupCMS
 
 > Install soupcms command line gem
 
@@ -15,16 +15,24 @@ publish_datetime: 2014-04-09T00:00:07.0Z
 > Run `soupcms new` command to generate skeleton for the blog
 
 ~~~
-    $ soupcms new <blog-name>
+    $ soupcms new <application-name>
 ~~~
 
-![soupCMS create new blog site](/assets/blog/posts/images/setup-blog-site/soupcms-blog-setup.png)
+![soupCMS create new blog site](/assets/blog/posts/images/setup-blog-site/soupcms-blog-setup.jpg)
 {: .full-width }
+
+
+> Run `bundle install` command to get all the required gems
+
+~~~
+    $ bundle install
+~~~
+
 
 > Run `soupcms seed` command to insert data in mongodb. [How to install MongoDB?](http://docs.mongodb.org/manual/installation/)
 
 ~~~
-    $ soupcms seed <blog-name>
+    $ soupcms seed <application-name>
 ~~~
 
 > Start you blog service locally, using puma web server running on default port 9292
@@ -42,9 +50,11 @@ publish_datetime: 2014-04-09T00:00:07.0Z
 > Run `soupcms post` command to generate skeleton for the blog
 
 ~~~
-    $ soupcms new <blog-name>
+    $ soupcms post <application-name>
 ~~~
 
+![soupCMS create new post](/assets/blog/posts/images/setup-blog-site/create-new-post.jpg)
+{: .full-width }
 
 
 
