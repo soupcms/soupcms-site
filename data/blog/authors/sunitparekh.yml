@@ -1,7 +1,7 @@
 ---
-  name: Sunit M Parekh
-  first_name: Sunit
-  last_name: Parekh
+  name: Sunit Parekh
+  bio: Application Developer, <a href="http://www.thoughtworks.com">ThoughtWorks</a>
+  thumbnail: http://www.gravatar.com/avatar/f40c60ffb60255ae89e75ccbb8eb303c.png
   email: parekh.sunit@gmail.com
   twitter_handle: sunitparekh
-
+  github_username: sunitparekh

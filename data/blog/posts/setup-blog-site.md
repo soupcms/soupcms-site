@@ -1,5 +1,5 @@
 ---
-tags: [deployment, getting-started]
+tags: [setup, how-to]
 title: Getting started with soupCMS
 publish_datetime: 2014-04-09T00:00:07.0Z
 ---
@@ -32,7 +32,7 @@ publish_datetime: 2014-04-09T00:00:07.0Z
 > Run `soupcms seed` command to insert data in mongodb. [How to install MongoDB?](http://docs.mongodb.org/manual/installation/)
 
 ~~~
-    $ soupcms seed <application-name>
+    $ soupcms seed <application-name> -c
 ~~~
 
 > Start you blog service locally, using puma web server running on default port 9292
