@@ -4,19 +4,9 @@ title: Deploying soupCMS website to Heroku
 publish_datetime: 2014-04-09T00:00:07.0Z
 ---
 
-###  Create mongoDB database on [MongoLab](https://mongolab.com/welcome/)
-
-1. Create new database (Single Node, Sandbox) with database name same as application name. Choose any 'United State' region since Heroku region is going to be 'United States'.
-
-2. Create two users, read-only (username: soupcms) and read/write (username: admin). You can choose different username as well, this is just an example.
-
-3. Get mongoDB url for the database from MongoLab to connect using driver for both the users
-
-~~~
-mongodb://<user-name>:<password>@abcdef1234.mongolab.com:12345/<mongolab-database-name>
-~~~
-
 ### Create NEW application on [Heroku](https://devcenter.heroku.com/articles/git)
+
+install [Heroku toolbelt](https://toolbelt.heroku.com/) to get started
 
 ~~~
 $ git init
@@ -27,13 +17,17 @@ $ heroku apps:create <heroku-app-name>
 
 read more [here](https://devcenter.heroku.com/articles/git)
 
-### Configure mongoDB connection uri using [Heroku configs](https://devcenter.heroku.com/articles/config-vars)
+###  Create mongoDB database on [MongoLab](https://mongolab.com/welcome/)
 
 ~~~
-$ heroku config:set MONGODB_URI_<app-name>=<read-only-mongolab-uri>
+$ heroku addons:add mongolab
 ~~~
+
+above command adds mongodb addon from MongoLab to your heroku application.
 
 ###  Deploy application to Heroku
+
+repeat this command for every deployment
 
 ~~~
 $ git push heroku master
@@ -43,8 +37,10 @@ read more [here](https://devcenter.heroku.com/articles/git)
 
 ###  Run `soupcms seed` command to import data
 
+repeat this command for every deployment
+
 ~~~
-$ (export MONGODB_URI_<app-name>=<read-write-mongolab-uri> && soupcms seed <application-name> -c)
+$ heroku run bundle exec soupcms seed <app-name> -c
 ~~~
 
 clean option `-c` does database clean and insert, important while soupCMS is in under heavy development, until v1.0 is release.
