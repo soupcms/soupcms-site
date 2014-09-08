@@ -1,0 +1,3 @@
+bundle exec foreman run soupcms seed www -e prod-admin.env
+bundle exec foreman run soupcms seed blog -e prod-admin.env
+bundle exec foreman run soupcms seed docs -e prod-admin.env
