@@ -1,7 +1,7 @@
 ---
 tags: [deployment, how-to]
 title: Deploying soupCMS website to Heroku
-publish_datetime: 2014-04-09T00:00:07.0Z
+publish_datetime: 2014-05-09T00:00:07.0Z
 ---
 
 ### Create NEW application on [Heroku](https://devcenter.heroku.com/articles/git)

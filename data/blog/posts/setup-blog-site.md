@@ -1,7 +1,7 @@
 ---
 tags: [setup, how-to]
 title: Getting started with soupCMS
-publish_datetime: 2014-04-09T00:00:07.0Z
+publish_datetime: 2014-05-10T00:00:07.0Z
 ---
 
 ## Setup your blog site using soupCMS
@@ -18,8 +18,7 @@ publish_datetime: 2014-04-09T00:00:07.0Z
     $ soupcms new <application-name>
 ~~~
 
-![soupCMS create new blog site](/assets/blog/posts/images/setup-blog-site/soupcms-blog-setup.jpg)
-{: .full-width }
+![soupCMS create new blog site](/assets/blog/posts/images/setup-blog-site/soupcms-blog-setup.jpg){: .full-width }
 
 
 > Run `bundle install` command to get all the required gems
@@ -53,8 +52,7 @@ publish_datetime: 2014-04-09T00:00:07.0Z
     $ soupcms post <application-name>
 ~~~
 
-![soupCMS create new post](/assets/blog/posts/images/setup-blog-site/create-new-post.jpg)
-{: .full-width }
+![soupCMS create new post](/assets/blog/posts/images/setup-blog-site/create-new-post.jpg){: .full-width }
 
 
 

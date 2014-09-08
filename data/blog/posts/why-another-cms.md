@@ -1,14 +1,14 @@
 ---
 tags: [cms, design principles]
 title: Why another CMS?
-description: Here is why I decided to build my own light-weight CMS. This also can help others what should be watch out for while choosing CMS.
+description: Here is why I decided to build my own light-weight CMS. This also can help others what should be criteria should be considered while choosing CMS.
 publish_datetime: 2014-04-09T00:00:07.0Z
 
 ---
 
-Using different CMS system on projects varying from heavy weights like Teamsite, Drupal and lightweights like Wordpress or rails based Radiant or LocomotiveCMS. I aways found problems with all these CMS systems is, I had to code my application logic in the way CMS system outlines either as plugins or modules etc.
+Using different CMS system on projects varying from heavy weights like Teamsite, Drupal and lightweights like Wordpress, Radiant or LocomotiveCMS. I aways found one common problems with all these CMS, that is, I had to code my application logic in CMS system, the way CMS allows either as plugins or modules or extensions.
 
-Why CMS system can't be unobtrusive. Means I want all features of CMS and allows me to code & evolve my application logic as I want. e.g. I have rails application and would like to add CMS as component in it. I can upgrade my rails app without any problem. I faced similar problem, using Radiant CMS with rails 2, 3.2 and 4 all versions.
+Why CMS system can't be unobtrusive? Means I want all features of CMS and allows me to code & evolve my application logic as I want. e.g. I have rails application and would like to add CMS as component in it. I can upgrade my rails app without any problem. I faced similar problem, using Radiant CMS with rails 2, 3.2 and 4 all versions.
 
 Also it is difficult to consume data from different or in-house sources. Such as, already have product catalog api available and would like to use it.
 

@@ -2,7 +2,10 @@
   name: navigation
 
   logo: 
-    font_icon: fa fa-magic
+    image:
+      url: "/assets/logo.svg"
+      html_options:
+        class: inline-svg
     text: soupCMS
     link: 
       url: http://www.soupcms.com/home
