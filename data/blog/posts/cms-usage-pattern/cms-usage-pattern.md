@@ -13,7 +13,7 @@ _____
 
 ## Based on usage pattern of the CMS
 
-![CMS usage pattern](/assets/blog/posts/images/cms-usage-pattern.png "CMS usage pattern")
+![CMS usage pattern](ref:images:posts/cms-usage-pattern/cms-usage-pattern.png "CMS usage pattern")
 
 ### *Type 1: Full CMS*
 

@@ -2,7 +2,6 @@ require 'bundler/setup'
 
 require 'tilt'
 require 'sprockets'
-require 'sprockets/helpers'
 
 require 'soupcms/common'
 require 'soupcms/core'
@@ -23,12 +22,6 @@ map '/assets' do
   sprockets.append_path PUBLIC_DIR
   sprockets.append_path SITE_TEMPLATE_DIR
   sprockets.append_path SoupCMS::Core::Template::Manager::DEFAULT_TEMPLATE_DIR
-  Sprockets::Helpers.configure do |config|
-    config.environment = sprockets
-    config.prefix = '/assets'
-    config.public_path = PUBLIC_DIR
-    config.digest = true
-  end
   run sprockets
 end
 
