@@ -32,7 +32,8 @@
                 title: soupCMS blog
                 subtitle: unobtrusive CMS framework
                 sub_headline: unobtrusive CMS framework that integrates within your application
-                image: 
+                style: light-on-dark
+                image:
                   source: cloudinary
                   base_url: http://res.cloudinary.com/sunitparekh/image/upload
                   desktop: purple-textures-low_xiamgc.jpg
