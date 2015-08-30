@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 
 gem 'soupcms-cli', github: 'soupcms/soupcms-cli'
 gem 'soupcms-common', github: 'soupcms/soupcms-common'
@@ -19,6 +19,5 @@ gem 'foreman'
 gem 'passenger'
 gem 'puma'
 gem 'mongo'
-gem 'bson_ext'
 gem 'newrelic_rpm'
 
